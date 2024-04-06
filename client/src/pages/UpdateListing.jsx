@@ -105,21 +105,46 @@ export default function CreateListing() {
     });
   };
   const handleChange = (e) => {
-    if (e.target.id === 'sale' || e.target.id === 'sell') {
-      setFormData({
-        ...formData,
-        type: e.target.id,
-      });
-    }
-
-    if (
-      e.target.id === 'offer'
-    ) {
-      setFormData({
-        ...formData,
-        [e.target.id]: e.target.checked,
-      });
-    }
+        if (e.target.id === 'sale' || e.target.id === 'sell') {
+          setFormData({
+            ...formData,
+            type: e.target.id,
+          });
+        }
+        if (e.target.id === 'rent' || e.target.id === 'rent') {
+            setFormData({
+              ...formData,
+              type: e.target.id,
+            });
+          }
+          if (e.target.id === 'donate' || e.target.id === 'donate') {
+            setFormData({
+              ...formData,
+              type: e.target.id,
+            });
+          }
+          if (e.target.id === 'share' || e.target.id === 'share') {
+            setFormData({
+              ...formData,
+              type: e.target.id,
+            });
+          }
+          if (e.target.id === 'other' || e.target.id === 'other') {
+            setFormData({
+              ...formData,
+              type: e.target.id,
+            });
+          }
+        
+    
+        if (
+          e.target.id === 'offer'
+        ) {
+          setFormData({
+            ...formData,
+            [e.target.id]: e.target.checked,
+          });
+        }
 
     if (
       e.target.type === 'number' ||
@@ -352,7 +377,7 @@ export default function CreateListing() {
             disabled={loading || uploading}
             className='p-3 bg-slate-700 text-white rounded-lg uppercase hover:opacity-95 disabled:opacity-80'
           >
-            {loading ? 'Creating...' : 'Update listing'}
+            {loading ? 'Updating...' : 'Update listing'}
           </button>
           {error && <p className='text-red-700 text-sm'>{error}</p>}
         </div>

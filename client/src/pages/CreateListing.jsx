@@ -18,7 +18,7 @@ export default function CreateListing() {
     name: '',
     description: '',
     address: '',
-    type: 'sell',
+    type: '',
     regularPrice: 0,
     discountPrice: 0,
     offer: false,
@@ -94,6 +94,31 @@ export default function CreateListing() {
         type: e.target.id,
       });
     }
+    if (e.target.id === 'rent' || e.target.id === 'rent') {
+        setFormData({
+          ...formData,
+          type: e.target.id,
+        });
+      }
+      if (e.target.id === 'donate' || e.target.id === 'donate') {
+        setFormData({
+          ...formData,
+          type: e.target.id,
+        });
+      }
+      if (e.target.id === 'share' || e.target.id === 'share') {
+        setFormData({
+          ...formData,
+          type: e.target.id,
+        });
+      }
+      if (e.target.id === 'other' || e.target.id === 'other') {
+        setFormData({
+          ...formData,
+          type: e.target.id,
+        });
+      }
+    
 
     if (
       e.target.id === 'offer'
