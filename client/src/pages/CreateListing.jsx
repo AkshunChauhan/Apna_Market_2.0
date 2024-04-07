@@ -172,12 +172,12 @@ export default function CreateListing() {
     }
   };
   return (
-    <main className='p-3 max-w-4xl mx-auto'>
+    <main className='p-3 max-w-4xl mx-auto text-gray-100'>
       <h1 className='text-3xl font-semibold text-center my-7'>
         Create a Listing
       </h1>
-      <form onSubmit={handleSubmit} className='flex flex-col sm:flex-row gap-4'>
-        <div className='flex flex-col gap-4 flex-1'>
+      <form onSubmit={handleSubmit} className='flex flex-col sm:flex-row gap-4 '>
+        <div className='flex flex-col gap-4 flex-1 text-black'>
           <input
             type='text'
             placeholder='Name'
@@ -192,7 +192,7 @@ export default function CreateListing() {
           <textarea
             type='text'
             placeholder='Description'
-            className='border p-3 rounded-lg'
+            className='border p-3 rounded-lg '
             id='description'
             required
             onChange={handleChange}
@@ -207,7 +207,7 @@ export default function CreateListing() {
             onChange={handleChange}
             value={formData.address}
           />
-          <div className='flex gap-6 flex-wrap'>
+          <div className='flex gap-6 flex-wrap text-gray-100'>
             <div className='flex gap-2'>
             <input
                 type='checkbox'
@@ -248,7 +248,7 @@ export default function CreateListing() {
               />
               <span>Donate</span>
             </div>
-            <div className='flex gap-2'>
+            <div className='flex gap-2 text-gray-100'>
             <input
                 type='checkbox'
                 id='other'
@@ -258,7 +258,7 @@ export default function CreateListing() {
               />
               <span>Other</span>
             </div>
-            <div className='flex gap-2'>
+            <div className='flex gap-2 text-gray-100'>
             <input
                 type='checkbox'
                 id='offer'
@@ -269,7 +269,7 @@ export default function CreateListing() {
               <span>Offer</span>
             </div>
           </div>
-            <div className='flex items-center gap-2'>
+            <div className='flex items-center gap-2 text-gray-100'>
               <input
                 type='number'
                 id='regularPrice'
@@ -280,7 +280,7 @@ export default function CreateListing() {
                 onChange={handleChange}
                 value={formData.regularPrice}
               />
-              <div className='flex flex-col items-center'>
+              <div className='flex flex-col items-center text-gray-100'>
                 <p>Regular price</p>
                 {formData.type === 'rent' && (
                   <span className='text-xs'></span>
@@ -288,7 +288,7 @@ export default function CreateListing() {
               </div>
             </div>
             {formData.offer && (
-              <div className='flex items-center gap-2'>
+              <div className='flex items-center gap-2 text-gray-100'>
                 <input
                   type='number'
                   id='discountPrice'
@@ -299,7 +299,7 @@ export default function CreateListing() {
                   onChange={handleChange}
                   value={formData.discountPrice}
                 />
-                <div className='flex flex-col items-center'>
+                <div className='flex flex-col items-center text-gray-100'>
                   <p>Discounted price</p>
                   {formData.type === 'rent' && (
                     <span className='text-xs'>($ / month)</span>
@@ -308,17 +308,17 @@ export default function CreateListing() {
               </div>
             )}
           </div>
-          <div className='flex flex-col flex-1 gap-4'>
+          <div className='flex flex-col flex-1 gap-4 text-gray-100'>
           <p className='font-semibold'>
             Images:
-            <span className='font-normal text-gray-600 ml-2'>
+            <span className='font-normal text-gray-100 ml-2'>
               The first image will be the cover (max 6)
             </span>
           </p>
           <div className='flex gap-4'>
             <input
               onChange={(e) => setFiles(e.target.files)}
-              className='p-3 border border-gray-300 rounded w-full'
+              className='p-3 border border-gray-100 rounded w-full'
               type='file'
               id='images'
               accept='image/*'
@@ -328,12 +328,12 @@ export default function CreateListing() {
               type='button'
               disabled={uploading}
               onClick={handleImageSubmit}
-              className='p-3 text-green-700 border border-green-700 rounded uppercase hover:shadow-lg disabled:opacity-80'
+              className='p-3 text-green-500 border border-green-500 rounded uppercase hover:shadow-lg disabled:opacity-80'
             >
               {uploading ? 'Uploading...' : 'Upload'}
             </button>
           </div>
-          <p className='text-red-700 text-sm'>
+          <p className='text-red-500 text-sm'>
             {imageUploadError && imageUploadError}
           </p>
           {formData.imageUrls.length > 0 &&
@@ -350,7 +350,7 @@ export default function CreateListing() {
                 <button
                   type='button'
                   onClick={() => handleRemoveImage(index)}
-                  className='p-3 text-red-700 rounded-lg uppercase hover:opacity-75'
+                  className='p-3 text-red-500 rounded-lg uppercase hover:opacity-75'
                 >
                   Delete
                 </button>
@@ -358,11 +358,11 @@ export default function CreateListing() {
             ))}
           <button
             disabled={loading || uploading}
-            className='p-3 bg-slate-700 text-white rounded-lg uppercase hover:opacity-95 disabled:opacity-80'
+            className='p-3 bg-blue-700 text-white rounded-lg uppercase hover:opacity-95 disabled:opacity-80'
           >
             {loading ? 'Creating...' : 'Create listing'}
           </button>
-          {error && <p className='text-red-700 text-sm'>{error}</p>}
+          {error && <p className='text-red-500 text-sm'>{error}</p>}
         </div>
       </form>
     </main>

@@ -5,6 +5,7 @@ import { Navigation } from 'swiper/modules';
 import SwiperCore from 'swiper';
 import 'swiper/css/bundle';
 import ListingItem from '../components/ListingItem';
+import '../index.css';
 
 export default function Home() {
   const [offerListings, setOfferListings] = useState([]);
@@ -74,12 +75,12 @@ export default function Home() {
     <div>
       {/* top */}
       <div className='flex flex-col gap-6 p-28 px-3 max-w-6xl mx-auto'>
-        <h1 className='text-slate-700 font-bold text-3xl lg:text-6xl'>
-          Find your next <span className='text-slate-500'>perfect</span>
+        <h1 className='text-slate-300 font-bold text-3xl lg:text-6xl'>
+        Discover your next <span className='text-blue-400'>essential</span>
           <br />
-          resource with ease
+          item with simplicity
         </h1>
-        <div className='text-gray-400 text-xs sm:text-sm'>
+        <div className='text-gray-100 text-xs sm:text-sm'>
         Apna Market is a step towards sustainable development, 
           <br />
           promoting responsible consumption and maximizing the 
@@ -117,7 +118,7 @@ utility of resources within the student community.
         {offerListings && offerListings.length > 0 && (
           <div className=''>
             <div className='my-3'>
-              <h2 className='text-2xl font-semibold text-slate-600'>Recent Resources offers</h2>
+              <h2 className='text-2xl font-semibold text-slate-100'>Recent Resources offers</h2>
               <Link className='text-sm text-blue-800 hover:underline' to={'/search?offer=true'}>Show more offers</Link>
             </div>
             <div className='flex flex-wrap gap-4'>
@@ -130,7 +131,7 @@ utility of resources within the student community.
           {shareListings && shareListings.length > 0 && (
           <div>
             <div className='my-3'>
-              <h2 className='text-2xl font-semibold text-slate-600'>Recent options to share Resources  </h2>
+              <h2 className='text-2xl font-semibold text-slate-100'>Recent options to share Resources  </h2>
               <Link className='text-sm text-blue-800 hover:underline' to={'/search?type=share'}>Show more shares</Link>
             </div>
             <div className='flex flex-wrap gap-4'>
@@ -143,7 +144,7 @@ utility of resources within the student community.
           {donateListings && donateListings.length > 0 && (
           <div>
             <div className='my-3'>
-              <h2 className='text-2xl font-semibold text-slate-600'>Recent free and Donated Resources</h2>
+              <h2 className='text-2xl font-semibold text-slate-100'>Recent free and Donated Resources</h2>
               <Link className='text-sm text-blue-800 hover:underline' to={'/search?type=donation'}>Show more donations</Link>
             </div>
             <div className='flex flex-wrap gap-4'>
@@ -156,7 +157,7 @@ utility of resources within the student community.
         {rentListings && rentListings.length > 0 && (
           <div className=''>
             <div className='my-3'>
-              <h2 className='text-2xl font-semibold text-slate-600'>Recent Resources for rent</h2>
+              <h2 className='text-2xl font-semibold text-slate-100'>Recent Resources for rent</h2>
               <Link className='text-sm text-blue-800 hover:underline' to={'/search?type=rent'}>Show more places for rent</Link>
             </div>
             <div className='flex flex-wrap gap-4'>
@@ -169,7 +170,7 @@ utility of resources within the student community.
         {saleListings && saleListings.length > 0 && (
           <div className=''>
             <div className='my-3'>
-              <h2 className='text-2xl font-semibold text-slate-600'>Recent Resources for sale</h2>
+              <h2 className='text-2xl font-semibold text-slate-100'>Recent Resources for sale</h2>
               <Link className='text-sm text-blue-800 hover:underline' to={'/search?type=sale'}>Show more places for sale</Link>
             </div>
             <div className='flex flex-wrap gap-4'>
